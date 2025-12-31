@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>今日のおみくじ</title>
+  <style>
+    /* タップ時の白いハイライトを消す */
+    * {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      background: linear-gradient(135deg, #fdfbfb, #ebedee);
+      text-align: center;
+      padding-top: 80px;
+      margin: 0;
+    }
+
+    h1 {
+      font-size: 32px;
+      margin-bottom: 30px;
+    }
+
+    #result {
+      font-size: 28px;
+      margin: 30px 0;
+      min-height: 1.5em;
+    }
+
+    button {
+      font-size: 18px;
+      padding: 12px 30px;
+      border: none;
+      border-radius: 25px;
+      background-color: #ff6f61;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #ff4f40;
+    }
+
+    /* 押した感を出す */
+    button:active {
+      transform: scale(0.96);
+      opacity: 0.85;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🔮 今日のおみくじ 🔮</h1>
+
+  <div id="result">ボタンを押してね</div>
+
+  <button onclick="drawOmikuji()">おみくじを引く</button>
+
+  <script>
+    function drawOmikuji() {
+      const fortunes = [
+        "大吉 🌸",
+        "中吉 😊",
+        "小吉 🙂",
+        "吉 😌",
+        "末吉 🤔",
+        "凶 😱",
+        "大凶 💀"
+      ];
+
+      const randomIndex = Math.floor(Math.random() * fortunes.length);
+      document.getElementById("result").textContent = fortunes[randomIndex];
+    }
+  </script>
+
+</body>
+</html>
+
